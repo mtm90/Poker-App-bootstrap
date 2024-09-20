@@ -35,18 +35,36 @@
         font-family: "Montserrat", sans-serif;
       }
       .hero-section {
-        background-color: var(--lighter-primary-color);
+        background-image: url("/esercitazioni/bootstrap-product/poker.jpg"); /* Replace with your actual image URL */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         padding: 100px 0;
         text-align: center;
+        height: 100vh;
+        position: relative;
       }
-      .hero-section h1 {
-        font-size: 48px;
-        font-weight: bold;
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+        z-index: 1;
       }
-      .hero-section p {
-        font-size: 20px;
-        color: var(--darker-color);
+
+      .hero-section h1,
+      .hero-section p,
+      .hero-section a {
+        position: relative;
+        z-index: 2;
+        color: #fff; /* Ensure text color is white for visibility */
       }
+
+
       .feature-card i,
       .plan-card i {
         font-size: 48px;
@@ -63,8 +81,9 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.3s ease-in-out;
       }
-      .card:hover{
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
+      .card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+          0 12px 40px rgba(0, 0, 0, 0.2);
       }
       #nav {
         background-color: var(--secondary-color);
@@ -76,14 +95,15 @@
       #feature {
         background-color: var(--ultra-light);
       }
-        .feature-card {
+      .feature-card {
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
         transition: box-shadow 0.3s ease-in-out;
-        }
+      }
 
-        .feature-card:hover {
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 12px 40px rgba(0, 0, 0, 0.2);
-        }
+      .feature-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2),
+          0 12px 40px rgba(0, 0, 0, 0.2);
+      }
 
       footer {
         background-color: #343a40;
@@ -97,7 +117,9 @@
     <!-- Navbar -->
     <nav id="nav" class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="#"><i class="bi bi-suit-club-fill"></i> Poker App</a>
+        <a class="navbar-brand" href="#"
+          ><i class="bi bi-suit-club-fill"></i> Poker App</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -112,13 +134,19 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#features"><i class="bi bi-grid-fill"></i> Features</a>
+              <a class="nav-link" href="#features"
+                ><i class="bi bi-grid-fill"></i> Features</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#plans"><i class="bi bi-bar-chart-line-fill"></i> Game Plans</a>
+              <a class="nav-link" href="#plans"
+                ><i class="bi bi-bar-chart-line-fill"></i> Game Plans</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#reviews"><i class="bi bi-chat-dots-fill"></i> Testimonials</a>
+              <a class="nav-link" href="#reviews"
+                ><i class="bi bi-chat-dots-fill"></i> Testimonials</a
+              >
             </li>
           </ul>
         </div>
@@ -126,7 +154,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" id="hero">
+    <section class="hero-section d-flex align-items-center" id="hero">
       <div class="container">
         <h1><i class="bi bi-suit-spade-fill"></i> Poker Texas Hold'em App</h1>
         <p>
@@ -134,13 +162,17 @@
           your games, resume saved sessions, and experience real competition
           with smart AI.
         </p>
-        <a id="btn" href="#plans" class="btn btn-primary btn-lg"><i class="bi bi-play-circle-fill"></i> Start Playing Now</a>
+        <a id="btn" href="#plans" class="btn btn-primary btn-lg"
+          ><i class="bi bi-play-circle-fill"></i> Start Playing Now</a
+        >
       </div>
     </section>
 
     <!-- Features Section -->
     <section id="feature" class="container py-5" id="features">
-      <h2 class="text-center mb-5"><i class="bi bi-star-fill"></i> App Features</h2>
+      <h2 class="text-center mb-5">
+        <i class="bi bi-star-fill"></i> App Features
+      </h2>
       <div class="row">
         <div class="col-md-4">
           <div class="card text-center feature-card">
@@ -155,7 +187,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card text-center feature-card mb-sm-3 mt-sm-3">
+          <div class="card text-center feature-card">
             <div class="card-body">
               <i class="bi bi-save-fill"></i>
               <h5 class="card-title">Save & Resume Games</h5>
@@ -185,7 +217,9 @@
 
     <!-- Plans Section -->
     <section class="container py-5" id="plans">
-      <h2 class="text-center mb-5"><i class="bi bi-cash-stack"></i> Game Plans</h2>
+      <h2 class="text-center mb-5">
+        <i class="bi bi-cash-stack"></i> Game Plans
+      </h2>
       <div class="row">
         <div class="col-md-4">
           <div class="card text-center plan-card">
@@ -201,7 +235,7 @@
           </div>
         </div>
         <div class="col-md-4">
-          <div class="card text-center plan-card mb-sm-3 mt-sm-3">
+          <div class="card text-center plan-card">
             <div class="card-body">
               <i class="bi bi-emoji-sunglasses"></i>
               <h5 class="card-title">Medium Player</h5>
@@ -232,7 +266,9 @@
 
     <!-- Reviews Section -->
     <section class="container py-5" id="reviews">
-      <h2 class="text-center mb-5"><i class="bi bi-chat-right-quote-fill"></i> Testimonials</h2>
+      <h2 class="text-center mb-5">
+        <i class="bi bi-chat-right-quote-fill"></i> Testimonials
+      </h2>
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
